@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love You Jhone</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #4b0082;
+            overflow: hidden;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+        h1 {
+            color: #ff66b2;
+            font-size: 50px;
+            font-weight: bold;
+            position: relative;
+            text-shadow: 0 0 10px #ff99cc;
+        }
+        .big-heart {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1);
+            font-size: 120px;
+            color: #ff66b2;
+            animation: beat 1s infinite alternate;
+        }
+        @keyframes beat {
+            0% { transform: translate(-50%, -50%) scale(1); }
+            100% { transform: translate(-50%, -50%) scale(1.2); }
+        }
+        .heart {
+            position: absolute;
+            color: #ff1493;
+            font-size: 20px;
+            animation: float 5s linear infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            50% { transform: translateY(-200px) scale(1.2); opacity: 0.7; }
+            100% { transform: translateY(-400px) scale(0.5); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <h1>💜 Love You Manikh 💜</h1>
+    <br><br><br><br>    <br><br><br><br> 
+    <div class="big-heart">💜</div>
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '💜';
+            heart.classList.add('heart');
+            document.body.appendChild(heart);
+            
+            const x = Math.random() * window.innerWidth;
+            const y = window.innerHeight;
+            heart.style.left = `${x}px`;
+            heart.style.top = `${y}px`;
+            heart.style.fontSize = `${Math.random() * 30 + 10}px`;
+            
+            heart.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+        setInterval(createHeart, 200);
+    </script>
+</body>
+</html>
